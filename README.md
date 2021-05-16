@@ -19,21 +19,23 @@ There are three modules in this application
 - Use command `mvn spring-boot:run` from `employeeservImplementation` folder to run the project.
 - Use Postman or curl to post a request with below endpoint and request payload.
 	HTTP POST http://localhost:8080/v1/bfs/employees
+	
 	REQUEST Header Content-Type   application/json
+	
 	REQUEST Body 
 		
-		{
-	"first_name": "Farhan",
-	"last_name": "Nagori",
-	"date_of_birth": "03-02-2000",
-	"address": {
-		"zip_code": "455001",
-		"city":"My city",
-		"state": "MP",
-		"country": "India",
-		"line1": "Laxmi Nagar"
-	}
-}
+			{
+		"first_name": "Farhan",
+		"last_name": "Nagori",
+		"date_of_birth": "03-02-2000",
+		"address": {
+			"zip_code": "455001",
+			"city":"My city",
+			"state": "MP",
+			"country": "India",
+			"line1": "Laxmi Nagar"
+			}
+		}
 You will get Employee Response Payload with the Generated Id.
 If you use Invalid Request payload with Missing values then You will get Bad Request 400 Response with proper error message
 
