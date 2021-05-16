@@ -17,7 +17,28 @@ There are three modules in this application
 - Please have Maven version `3.3.3` & Java 8 on your system.
 - Use command `mvn clean install` to build the project.
 - Use command `mvn spring-boot:run` from `employeeservImplementation` folder to run the project.
-- Use postman or curl to access `http://localhost:8080/v1/bfs/employees/1` GET endpoint. It will return an Employee resource.
+- Use Postman or curl to post a request with below endpoint and request payload.
+	HTTP POST http://localhost:8080/v1/bfs/employees
+	REQUEST Header Content-Type   application/json
+	REQUEST Body 
+		
+		{
+	"first_name": "Farhan",
+	"last_name": "Nagori",
+	"date_of_birth": "03-02-2000",
+	"address": {
+		"zip_code": "455001",
+		"city":"My city",
+		"state": "MP",
+		"country": "India",
+		"line1": "Laxmi Nagar"
+	}
+}
+You will get Employee Response Payload with the Generated Id.
+If you use Invalid Request payload with Missing values then You will get Bad Request 400 Response with proper error message
+
+- Now Use postman or curl to access `http://localhost:8080/v1/bfs/employees/2` GET endpoint. It will return an Employee resource.
+- If you use the invalid employee id then you will get Employee Not Found 404 Rest Response
 
 ## Assignment
 We would like you to enhance the existing project and see you complete the following requirements:
